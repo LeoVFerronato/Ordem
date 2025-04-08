@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ordem de Serviço</h1>
+        <form id="ordemServicoForm">
+            <div class="form-group">
+                <label for="nomeCliente">Nome do Cliente:</label>
+                <input type="text" id="nomeCliente" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="dataInicio">Data de Início:</label>
+                <input type="date" id="dataInicio" required>
+            </div>
+            <div class="form-group">
+                <label for="dataFim">Data de Fim:</label>
+                <input type="date" id="dataFim" required>
+            </div>
+            <div class="form-group">
+                <label for="quantidadeHoras">Quantidade de Horas:</label>
+                <input type="number" id="quantidadeHoras" min="0" oninput="calcularTotal()" required>
+            </div>
+            <div class="form-group">
+                <label for="valorHora">Valor da Hora (R$):</label>
+                <input type="number" id="valorHora" min="0" step="0.01" oninput="calcularTotal()" required>
+            </div>
+            <div class="form-group">
+                <label for="valorTotal">Valor Total (R$):</label>
+                <input type="text" id="valorTotal" value="0.00" readonly>
+            </div>
+            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.7.1/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
