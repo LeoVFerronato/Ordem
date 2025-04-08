@@ -83,7 +83,7 @@ function gerarPDF() {
         },
         columnStyles: {
             0: { cellWidth: 40 }, // Largura da primeira coluna (ID)
-            1: { cellWidth: 'auto' }
+            1: { cellWidth: 'auto', halign: 'right' } // Largura da segunda coluna (Nome)
         }
     });
 
